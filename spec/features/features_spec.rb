@@ -15,4 +15,11 @@ feature 'Testing infrastructure' do
     click_button("Attack")
     expect(page).to have_content "Jack attacked Jill!"
   end
+
+  scenario 'attacks Jill and goes back to home page' do
+    sign_in_and_play
+    click_button("Attack")
+    click_button("Return to page")
+    expect(page).to have_content "Jill: 90 HP"
+  end
 end
