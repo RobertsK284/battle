@@ -13,6 +13,6 @@ feature 'Testing infrastructure' do
   scenario 'attacks Jill and returns confirmation' do
     sign_in_and_play
     click_button("Attack")
-    expect(page).to have_content "Attack confirmed!"
+    expect(page).to have_content "Jack attacked Jill!"
   end
 end
