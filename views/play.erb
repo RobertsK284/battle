@@ -1,5 +1,5 @@
-<p><%= $player_1.return_name %> v <%= $player_2.return_name %></p>
-<p><%= $player_2.return_name %>: <%= $player_2.hit_points %> HP</p>
+<p><%= @game.player_1.name %> v <%= @game.player_2.name %></p>
+<p><%= @game.player_2.name %>: <%= @game.player_2.hit_points %> HP</p>
 
 
 <form action="/attack">
