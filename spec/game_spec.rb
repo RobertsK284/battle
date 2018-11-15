@@ -2,6 +2,10 @@ require 'game'
 require 'player'
 
 describe Game do
+  subject(:game) { described_class.new }
+  let(:player_1) { double :player_1 }
+  let(:player_2) { double :player_2 }
+
   it 'creates an instance of the Game class' do
     game = Game.new
     expect(game.instance_of? Game).to be true
@@ -15,5 +19,10 @@ describe Game do
   it 'creates a player called Jill and stores it in @player_2' do
     game = Game.new
     expect(game.player_2.return_name).to eq "Jill"
+  end
+
+  it 'damages the player' do
+    expect(player_2).to receive(:receive_damage)
+    game.attack(player_2)
   end
 end

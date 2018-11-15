@@ -12,8 +12,4 @@ describe Player do
     jill.hit_points = 90
     expect(jill.hit_points).to eq 90
   end
-  it "attacks Jill and deducts HP by 10 leaving 90" do
-    jack.attack(jill)
-    expect(jill.hit_points).to eq 90
-  end
 end

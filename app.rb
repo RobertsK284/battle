@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative "./lib/player.rb"
+require_relative "./lib/game.rb"
 class Battle < Sinatra::Base
   enable :sessions
 
@@ -19,7 +20,8 @@ class Battle < Sinatra::Base
   end
 
  get '/attack' do
-   $player_1.attack($player_2)
+   game = Game.new
+   game.attack($player_2)
    erb(:attack)
  end
   run! if app_file == $0
