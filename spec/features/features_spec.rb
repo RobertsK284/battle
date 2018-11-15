@@ -2,9 +2,10 @@ require 'game'
 
 feature 'Testing infrastructure' do
 
-  scenario 'returns Jill: 100 HP' do
+  scenario 'returns player names and hit_points' do
     sign_in_and_play
     expect(page).to have_content "Jill: 100 HP"
+    expect(page).to have_content "Jack: 100 HP"
   end
 
   scenario 'attacks Jill and returns confirmation' do
