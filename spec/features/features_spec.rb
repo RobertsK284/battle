@@ -1,3 +1,5 @@
+require 'game'
+
 feature 'Testing infrastructure' do
 
   scenario 'returns Jack and Jill' do

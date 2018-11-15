@@ -12,6 +12,7 @@ class Battle < Sinatra::Base
     p params
     $player_1 = Player.new(params[:player_1])
     $player_2 = Player.new(params[:player_2])
+    $game = Game.new($player_1, $player_2)
     redirect to('/play')
   end
 
@@ -20,8 +21,7 @@ class Battle < Sinatra::Base
   end
 
  get '/attack' do
-   game = Game.new
-   game.attack($player_2)
+   $game.attack($player_2)
    erb(:attack)
  end
   run! if app_file == $0
